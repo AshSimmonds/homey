@@ -12,7 +12,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   renderers: ['@astrojs/renderer-preact'],
 
   buildOptions: {
-    site: 'https://ashsimmonds.github.io/homey/', // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
+    site: 'https://ashsimmonds.github.io/', // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
     sitemap: true, // Generate sitemap (set to "false" to disable)
   },
 });
