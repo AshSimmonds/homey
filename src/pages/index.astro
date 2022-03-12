@@ -1,22 +1,11 @@
 ---
-// Component Imports
-import Button from '../components/Button.astro';
-// Imports the global styles to be inlined in the <head>
-import styles from '../styles/global.css';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+// Example: src/pages/index.astro
+import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<title>one two seven point zero point zero point one</title>
-		<style set:html={styles}></style>
-	</head>
+<DefaultLayout>
 
-	<body>
+    <div class="container mx-auto text-center">
 
 	<a href="https://todoist.com/app/upcoming" class="btn btn-primary">todoist</a>
 	<a href="https://www.reddit.com/" class="btn btn-primary">reddit</a>
@@ -36,7 +25,6 @@ import styles from '../styles/global.css';
 <a href="https://shuffle.dev/dashboard" class="btn btn-primary">ShuffleDev</a>
 
 
-	</body>
 
-
-</html>
+    </div>
+</DefaultLayout>
