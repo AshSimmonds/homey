@@ -11,8 +11,8 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   // Enable the Preact renderer to support Preact JSX components.
   renderers: ['@astrojs/renderer-preact'],
 
-  //  buildOptions: {
-  //    site: 'https://ashsimmonds.github.io/homey/', // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
-  //    sitemap: true, // Generate sitemap (set to "false" to disable)
-  //  },
+  buildOptions: {
+    site: 'https://ashsimmonds.github.io/homey/', // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
+    sitemap: true, // Generate sitemap (set to "false" to disable)
+  },
 });
