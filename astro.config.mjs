@@ -14,5 +14,6 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   buildOptions: {
     site: 'https://ashsimmonds.github.io/', // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
     sitemap: true, // Generate sitemap (set to "false" to disable)
+    sitemapFilter: (page) => page !== 'https://ashsimmonds.github.io/homey/sitemap'),
   },
 });
