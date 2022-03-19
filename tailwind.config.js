@@ -62,7 +62,7 @@ module.exports = {
             'text-shadow': '0 0 10px cyan',
           },
           h1: {
-            'font-size': '2rem',
+            'font-size': '1.5rem',
           },
           primary: '#00d500',
           'primary-focus': '#33ff33',
