@@ -61,8 +61,9 @@ module.exports = {
             'font-family': 'Orbitron',
             'text-shadow': '0 0 10px cyan',
           },
-          h1: {
-            'font-size': '1.5rem',
+          'h2': {
+            'font-size': '1.2rem',
+            'margin-top': '26px',
           },
           primary: '#00d500',
           'primary-focus': '#33ff33',
@@ -94,7 +95,7 @@ module.exports = {
           '--animation-input': '.2s',
           '--btn-text-case': 'uppercase',
           '--btn-focus-scale': '0.95',
-          '--navbar-padding': '.5rem',
+          '--navbar-padding': '1.5rem',
           '--border-btn': '1px',
           '--tab-border': '1px',
           '--tab-radius': '0.2rem',
