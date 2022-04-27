@@ -130,7 +130,8 @@ console.log("  ");
 
 		<h2>dev / programming</h2>
 	    
-	    		<a href="file:///C:\Users\ashsi\AppData\Roaming\Code - Insiders\User\settings.json">VSCode Insiders settings.json</a>
+	    		<input type="text" value="C:\Users\\ashsi\AppData\Roaming\Code - Insiders\User\settings.json" id="vscodesettings" /> <button onclick="copySettings()">Copy</button>
+
 
 			<a href="https://gitpod.io/workspaces" class="btn btn-primary">gitpod.io</a>
 
@@ -188,3 +189,24 @@ console.log("  ");
 
     </div>
 </DefaultLayout>
+	
+	
+<script>
+	
+function copySettings() {
+  /* Get the text field */
+  var copyText = document.getElementById("vscodesettings");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+	
+</script>
+	
