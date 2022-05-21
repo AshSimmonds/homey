@@ -26,6 +26,8 @@ if ((argvs[0] === '--p' || argvs[0] === '-path') && argvs[1]) {
                 if (extensions.includes(path.extname(filePath))) {
                     let content = fs.readFileSync(filePath)
 
+                    console.log('filePath: ' + filePath)
+
                     content = String(content).replace(/src="\//g, `src="${PRODUCTION_URL}`)
                     content = String(content).replace(/href="\//g, `href="${PRODUCTION_URL}`)
                     content = String(content).replace(/url\("\//g, `url("${PRODUCTION_URL}`)
