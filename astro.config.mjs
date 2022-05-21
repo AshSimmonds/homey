@@ -26,6 +26,6 @@ export default defineConfig({
     // sitemap: true, // Generate sitemap (set to "false" to disable)
     // sitemapFilter: (page) => page !== 'https://ashsimmonds.github.io/homey/sitemap',
     format: 'file',
-    base: 'homey',
+    base: '/homey',
   },
 });

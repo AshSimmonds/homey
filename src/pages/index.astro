@@ -2,16 +2,8 @@
 // Example: src/pages/index.astro
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
-var rightMeow = new Date();
-
-var niceNumbersRightMeow = rightMeow.getMilliseconds();
-
-var refreshLinkypoo = "/?rightMeow=" + niceNumbersRightMeow;
-
-console.log("--");
-console.log(rightMeow);
-console.log(niceNumbersRightMeow);
-console.log("  ");
+const rightMeow = new Date(Date.now());
+const rightMeowTimeDateFriendly = rightMeow.toLocaleString(undefined, {year: 'numeric', month: 'short', day: '2-digit', weekday:"short", hour: '2-digit', hour12: false, minute:'2-digit'});
 ---
 
 <style>
@@ -26,7 +18,7 @@ console.log("  ");
 
 <DefaultLayout>
 
-    <a href="https://github.com/AshSimmonds/homey/edit/main/src/pages/index.astro" style="float:right; font-size: xx-small;">edit</a>
+    <a href="https://github.com/AshSimmonds/homey/edit/main/src/pages/index.astro" style="float:right; font-size: xx-small;">Updated: {rightMeowTimeDateFriendly} GMT</a>
 
     <div class="container mx-auto text-center">
 
