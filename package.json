@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "postbuild": "node ./postbuild.mjs -path https://ashsimmonds.github.io/homey/",
     "preview": "astro preview"
   },
   "devDependencies": {
