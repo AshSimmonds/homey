@@ -40,4 +40,4 @@ jobs:
           # `./dist` is the default Astro build directory.
           # If you changed that, update it here too.
           publish_dir: ./dist
-          destination_dir: 'homey'
+          destination_dir: '/homey'
