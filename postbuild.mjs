@@ -11,6 +11,8 @@ if ((argvs[0] === '--p' || argvs[0] === '-path') && argvs[1]) {
     const extensions = ['.html', '.css', '.js', '.json']
     const PRODUCTION_URL = argvs[1]
 
+    console.log('PRODUCTION_URL: ' + PRODUCTION_URL)
+    console.log['process.env.NODE_ENV: ' + process.env.NODE_ENV]
 
     const replaceUrlsInFiles = function(dirPath, arrayOfFiles) {
         files = fs.readdirSync(dirPath)
