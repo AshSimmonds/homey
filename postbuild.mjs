@@ -11,9 +11,6 @@ if ((argvs[0] === '--p' || argvs[0] === '-path') && argvs[1]) {
     const extensions = ['.html', '.css', '.js', '.json']
     const PRODUCTION_URL = argvs[1]
 
-    console.log('PRODUCTION_URL: ' + PRODUCTION_URL)
-    console.log['process.env.NODE_ENV: ' + process.env.NODE_ENV]
-
     const replaceUrlsInFiles = function(dirPath, arrayOfFiles) {
         files = fs.readdirSync(dirPath)
 
@@ -42,8 +39,12 @@ if ((argvs[0] === '--p' || argvs[0] === '-path') && argvs[1]) {
         })
     }
 
-    if (PRODUCTION_URL && process.env.NODE_ENV === 'production') {
-        replaceUrlsInFiles(PUBLIC_DIR, files)
+    console.log('PRODUCTION_URL: ' + PRODUCTION_URL)
+    // console.log['process.env.NODE_ENV: ' + process.env.NODE_ENV]
+
+    // if (PRODUCTION_URL && process.env.NODE_ENV === 'production') {
+    if (PRODUCTION_URL) {
+            replaceUrlsInFiles(PUBLIC_DIR, files)
     } else {
         console.log('skip postbuild')
         process.exit(0)
