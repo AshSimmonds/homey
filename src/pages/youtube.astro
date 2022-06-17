@@ -1,0 +1,305 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import { XMLParser, XMLBuilder, XMLValidator } from 'fast-xml-parser'
+
+const devMode = true;
+
+const youtubeFeedUrlPrefix = 'https://www.youtube.com/feeds/videos.xml?channel_id=';
+
+let vidEntries = [];
+let vidsToday = 0;
+let vidsThisWeek = 0;
+let vidsThisMonth = 0;
+let vidsTotal = 0;
+let firstThreeYoutubersForTitle = [];
+let youtubersToday = [];
+let youtubersThisWeek = [];
+let youtubersThisMonth = [];
+let youtubersTheRest = [];
+
+console.log("$$$$$$$$$$$$ youtube.astro STARTING $$$$$$$$$$$$");
+
+const parserOptions = {
+    ignoreAttributes: false
+}
+
+const parser = new XMLParser(parserOptions);
+
+const youtubersData = await fetch('https://opensheet.elk.sh/11pDZxQyCN1LD6PLV9J4ZWAeQ_iPgv_qmMgSxgs41KCs/Sheet1').then(response => response.json());
+// https://feed2json.org/convert?url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3DUCxzC4EngIsMrPmbm6Nxvb-A
+
+//console.log( youtubersData );
+
+// limiting these numbers whilst in dev reduces API pestering
+let numberOfVidsPerYoutuber = 1;
+let numberOfYoutubers = 5;
+
+if (devMode) {
+    // numberOfVidsPerYoutuber = 2;
+    // numberOfYoutubers = youtubersData.length / 20;
+} else {
+    numberOfVidsPerYoutuber = 5;
+    numberOfYoutubers = youtubersData.length;
+}
+
+const aSecond = 1000;
+const aMinute = aSecond * 60;
+const anHour = aMinute * 60;
+const aDay = anHour * 24;
+const aWeek = aDay * 7;
+const aMonth = aWeek * 4;
+const aYear = aWeek * 52;
+
+for (var cowntYoutubers = 0; cowntYoutubers < numberOfYoutubers; cowntYoutubers++) {
+    console.log(youtubersData[cowntYoutubers]);
+
+    const youtubeFeedURL = youtubeFeedUrlPrefix + youtubersData[cowntYoutubers].ChannelID;
+
+    let youtuberAvatar = youtubersData[cowntYoutubers].AvatarImage;
+
+    if (youtuberAvatar == null) {
+        youtuberAvatar = '/1x1.png';
+    }
+
+    const youtubeResponse = await fetch(youtubeFeedURL);
+    console.log(youtubeResponse);
+
+    const youtubeText = await youtubeResponse.text();
+    console.log(youtubeText);
+
+    const youtubeObject = parser.parse(youtubeText);
+    console.log(youtubeObject);
+
+    const youtubeEntries = youtubeObject.feed.entry;
+    console.log(youtubeEntries);
+
+    //    const numberOfVidsPerYoutuber = 5; // youtubeEntries.length
+
+    for (var cowntVids = 0; cowntVids < numberOfVidsPerYoutuber; cowntVids++) {
+        //    console.log ( youtuberAvatar );
+
+        // console.log('Date.now(): ' + Date.now());
+        // console.log('youtubeEntries[cowntVids].published: ' + Date.parse(youtubeEntries[cowntVids].published));
+        // console.log('aDay: ' + aDay);
+        if ((Date.now() - Date.parse(youtubeEntries[cowntVids].published)) < (aDay)) {
+            vidsToday = vidsToday + 1;
+        }
+
+        if ((Date.now() - Date.parse(youtubeEntries[cowntVids].published)) < (aWeek)) {
+            vidsThisWeek = vidsThisWeek + 1;
+        }
+
+        if ((Date.now() - Date.parse(youtubeEntries[cowntVids].published)) < (aMonth)) {
+            vidsThisMonth = vidsThisMonth + 1;
+        }
+
+        vidsTotal = vidsTotal + 1;
+
+
+        //        console.log('youtubeEntries[cowntVids].published: ' + youtubeEntries[cowntVids].published);
+
+        vidEntries.push({
+            VideoId: String(youtubeEntries[cowntVids].id).substring(9),
+            VideoURL: youtubeEntries[cowntVids].link['@_href'],
+            VideoPublished: youtubeEntries[cowntVids].published,
+            VideoPublishedHuman: timeDifference(Date.now(), Date.parse(youtubeEntries[cowntVids].published)),
+            VideoTitle: encodeURIComponent(youtubeEntries[cowntVids].title),
+            VideoDescription: youtubeEntries[cowntVids].description,
+            VideoThumb: youtubeEntries[cowntVids]['media:group']['media:thumbnail']['@_url'],
+            VideoDuration: '', // https://sila.li/blog/youtube-video-duration-rss-feed - use Invidious
+            VideoViews: youtubeEntries[cowntVids]['media:group']['media:community']['media:statistics']['@_views'],
+            ChannelName: youtubeEntries[cowntVids].author['name'],
+            ChannelAvatar: youtuberAvatar,
+            ChannelURL: youtubeEntries[cowntVids].author['uri'],
+        })
+
+    }
+
+    console.log(vidEntries);
+
+}
+
+let vidEntriesSorted = vidEntries.sort((a, b) => Date.parse(b.VideoPublished) - Date.parse(a.VideoPublished));
+let vidEntriesSortedToday = [];
+let vidEntriesSortedThisWeek = [];
+let vidEntriesSortedThisMonth = [];
+let vidEntriesSortedTheRest = [];
+
+let vidIds = [];
+
+if (vidEntriesSorted != null && vidEntriesSorted.length > 0) {
+    for (let sortedCownt = 0; sortedCownt < vidEntriesSorted.length - 1; sortedCownt++) {
+        if (sortedCownt < 5) {
+            firstThreeYoutubersForTitle.push(vidEntriesSorted[sortedCownt].ChannelName);
+        }
+
+        vidIds.push(vidEntriesSorted[sortedCownt].VideoId);
+
+        // console.log('Date.now(): ' + Date.now());
+        // console.log('vidEntriesSorted[sortedCownt].published: ' + vidEntriesSorted[sortedCownt].VideoPublished);
+        // console.log('aDay: ' + aDay);
+
+        // console.log(sortedCownt + ': ' + vidEntriesSorted[sortedCownt].VideoTitle);
+
+        if ((Date.now() - Date.parse(vidEntriesSorted[sortedCownt].VideoPublished)) < (aDay)) {
+            youtubersToday.push(vidEntriesSorted[sortedCownt].ChannelName);
+            vidEntriesSortedToday.push(vidEntriesSorted[sortedCownt]);
+        } else if ((Date.now() - Date.parse(vidEntriesSorted[sortedCownt].VideoPublished)) < (aWeek)) {
+            youtubersThisWeek.push(vidEntriesSorted[sortedCownt].ChannelName)
+            vidEntriesSortedThisWeek.push(vidEntriesSorted[sortedCownt]);
+        } else if ((Date.now() - Date.parse(vidEntriesSorted[sortedCownt].VideoPublished)) < (aMonth)) {
+            youtubersThisMonth.push(vidEntriesSorted[sortedCownt].ChannelName)
+            vidEntriesSortedThisMonth.push(vidEntriesSorted[sortedCownt]);
+        } else {
+            youtubersTheRest.push(vidEntriesSorted[sortedCownt].ChannelName)
+            vidEntriesSortedTheRest.push(vidEntriesSorted[sortedCownt]);
+        }
+
+    }
+}
+
+firstThreeYoutubersForTitle = [...new Set(firstThreeYoutubersForTitle)];
+youtubersToday = [...new Set(youtubersToday)];
+youtubersThisWeek = [...new Set(youtubersThisWeek)];
+youtubersThisMonth = [...new Set(youtubersThisMonth)];
+youtubersTheRest = [...new Set(youtubersTheRest)];
+
+
+
+console.log("############# youtubers.astro COMPLETE #############");
+
+
+function timeDifference(current, previous) {
+
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = current - previous;
+
+    var approxText = ''; // 'approx '
+
+    if (elapsed < msPerMinute) {
+        return Math.round(elapsed / 1000) + ' secs ago';
+    } else if (elapsed < msPerHour) {
+        return Math.round(elapsed / msPerMinute) + ' mins ago';
+    } else if (elapsed < msPerDay) {
+        return Math.round(elapsed / msPerHour) + ' hrs ago';
+    } else if (elapsed < msPerMonth) {
+        return approxText + Math.round(elapsed / msPerDay) + ' days ago';
+    } else if (elapsed < msPerYear) {
+        return approxText + Math.round(elapsed / msPerMonth) + ' mths ago';
+    } else {
+        return approxText + Math.round(elapsed / msPerYear) + ' yrs ago';
+    }
+}
+
+const rightMeow = new Date(Date.now());
+const rightMeowTimeDateFriendly = rightMeow.toLocaleString(undefined, { year: 'numeric', month: 'short', day: '2-digit', weekday: "short", hour: '2-digit', hour12: false, minute: '2-digit' });
+const rightMeowDayMonthFriendly = rightMeow.getDate() + " " + rightMeow.toLocaleString('default', { month: 'short' });
+
+// const title = '';
+const title = 'Space tech vids for ' + rightMeowDayMonthFriendly + ' | ' + vidsToday + ' new | feat ' + firstThreeYoutubersForTitle.join(' ') + ' | Blue Dwarf Space';
+// max length 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789
+
+let youtubersTodayAndThisWeek = youtubersToday.concat(youtubersThisWeek);
+youtubersTodayAndThisWeek = [...new Set(youtubersTodayAndThisWeek)];
+
+//console.log (youtubersTodayAndThisWeek);
+
+// description = 'Latest space and tech vids from a curated list of high quality publishers, including ' + youtubersTodayAndThisWeek.join(', ');
+---
+
+
+
+<!-- <OpenGraphMeta title={title} url={contentUrl} thumbnail={thumbnail} description={description}></OpenGraphMeta> -->
+
+<!-- TODO: figure out why {title} doesn't resolve correctly any more -->
+<!-- <DefaultLayoutWide content={title}> -->
+<!-- <DefaultLayoutWide > -->
+
+<DefaultLayout>
+
+    <div class="container mx-auto text-center pt-8">
+
+        <h1>Space Youtubers Video Feed</h1>
+
+        <div class="prose my-4">
+
+            <!-- <HeaderGeneralSmall></HeaderGeneralSmall> -->
+
+            <div class="-mx-8 md:-mx-4 mt-4 mb-8">
+                <div id="announc3ment" data-augmented-ui="" class="">
+                    <p class="text-center hidden">The {numberOfVidsPerYoutuber} most recent videos from each of our favourite Space Youtubers</p>
+
+
+
+                    <div class="flex flex-wrap -mx-4 text-center md:text-left -mt-4">
+                        <div class="w-full md:w-1/2 text-center">
+                            <h3 class="">Today</h3>
+                            <div class="inline-flex items-center justify-center mb-4 w-12 h-12 text-xl text-white bg-secondary mask mask-hexagon-2">{vidsToday}</div>
+                        </div>
+                        <div class="w-full md:w-1/2 text-center">
+                            <h3 class="">This week</h3>
+                            <div class="inline-flex items-center justify-center mb-4 w-12 h-12 text-xl text-white bg-secondary mask mask-hexagon-2">{vidsThisWeek}</div>
+                        </div>
+                        <div class="w-full md:w-1/2 text-center">
+                            <h3 class="">This month</h3>
+                            <div class="inline-flex items-center justify-center mb-4 w-12 h-12 text-xl text-white bg-secondary mask mask-hexagon-2">{vidsThisMonth}</div>
+                        </div>
+                        <div class="w-full md:w-1/2 text-center">
+                            <h3 class="">Total</h3>
+                            <div class="inline-flex items-center justify-center mb-4 w-12 h-12 text-xl text-white bg-secondary mask mask-hexagon-2">{vidsTotal}</div>
+                        </div>
+                    </div>
+
+                    <p class="text-white text-2xs font-bold">Last generated: {rightMeowTimeDateFriendly} GMT</p>
+
+                    <p class="text-sm text-center mb-0 hidden">
+                        (Some folk post daily, others only weekly or monthly so will need to scroll down to see the less prolific creators)
+                    </p>
+                </div>
+            </div>            
+            
+        </div>
+
+        <div class="my-12">
+            <h2 class="text-xl text-left mb-4">Today</h2>
+            <p class="text-xs">Featuring: {youtubersToday.join(', ')}</p>
+        </div>
+
+        <!-- <GroupCardsYoutubeThumb GroupOfVids={vidEntriesSortedToday}></GroupCardsYoutubeThumb> -->
+
+        <div class="my-12">
+            <h2 class="text-xl text-left mb-4">This week</h2>
+            <p class="text-xs">Featuring: {youtubersThisWeek.join(', ')}</p>
+        </div>
+
+        <!-- <GroupCardsYoutubeThumb GroupOfVids={vidEntriesSortedThisWeek}></GroupCardsYoutubeThumb> -->
+
+        <div class="my-12">
+            <h2 class="text-xl text-left mb-4">This month</h2>
+            <p class="text-xs">Featuring: {youtubersThisMonth.join(', ')}</p>
+        </div>
+
+        <!-- <GroupCardsYoutubeThumb GroupOfVids={vidEntriesSortedThisMonth}></GroupCardsYoutubeThumb> -->
+
+        <div class="my-12">
+            <h2 class="text-xl text-left mb-4">Older than a month</h2>
+            <p class="text-xs">Featuring: {youtubersTheRest.join(', ')}</p>
+
+            <p>
+                <pre>
+                    http://www.youtube.com/watch_videos?video_ids={vidIds.join(',')}
+
+                </pre>
+            </p>
+        </div>
+
+        <!-- <GroupCardsYoutubeThumb GroupOfVids={vidEntriesSortedTheRest}></GroupCardsYoutubeThumb> -->
+
+    </div>
+<!-- </DefaultLayoutWide> -->
+</DefaultLayout>
