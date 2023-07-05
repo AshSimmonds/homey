@@ -3,454 +3,756 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
 const rightMeow = new Date(Date.now());
-const rightMeowTimeDateFriendly = rightMeow.toLocaleString(undefined, {year: 'numeric', month: 'short', day: '2-digit', weekday:"short", hour: '2-digit', hour12: false, minute:'2-digit'});
+const rightMeowTimeDateFriendly = rightMeow.toLocaleString(undefined, {
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+    weekday: "short",
+    hour: "2-digit",
+    hour12: false,
+    minute: "2-digit",
+});
 ---
 
 <style>
-
-	.btn {
-		text-decoration: none;
-		height: 48px;
-		min-height: 48px;
-margon:8px;
-padding:4px;
-	}
-
+    .btn {
+        text-decoration: none;
+        height: 48px;
+        min-height: 48px;
+        margon: 8px;
+        padding: 4px;
+    }
 </style>
 
 <DefaultLayout>
-
-    <a href="https://github.com/AshSimmonds/homey/edit/main/src/pages/index.astro" style="float:right; font-size: xx-small;">Updated: {rightMeowTimeDateFriendly} GMT</a>
+    <a
+        href="https://github.com/AshSimmonds/homey/edit/main/src/pages/index.astro"
+        style="float:right; font-size: xx-small;"
+        >Updated: {rightMeowTimeDateFriendly} GMT</a
+    >
 
     <div class="container mx-auto text-center">
-	    
-	    
-	    
-	<h2 class="align">TODO</h2>
-	    
-	    - [ ] make TODO list  
-	    - [ ] do TODO things  
+        <h2 class="align">TODO</h2>
 
-	    
-	    
-	    
-	<h2 class="align">res prodentia</h2>
+        - [ ] make TODO list - [ ] do TODO things
 
-		<a href="https://mail.google.com" class="btn btn-primary"><span class="material-symbols-outlined">mailasdf</span>c</a>
+        <h2 class="align">res prodentia</h2>
 
-		<a href="https://calendar.google.com/" class="btn btn-primary"><span class="material-symbols-outlined">calendar_month</span>Calendar</a>
+        <a href="https://mail.google.com" class="btn btn-primary"
+            ><span class="material-symbols-outlined">mailasdf</span>c</a
+        >
 
-		<a href="https://discord.com/channels/@me" class="btn btn-primary"><span class="material-symbols-outlined">sports_esports</span>Discord</a>
+        <a href="https://calendar.google.com/" class="btn btn-primary"
+            ><span class="material-symbols-outlined">calendar_month</span
+            >Calendar</a
+        >
 
-		<a href="https://drive.google.com/drive/" class="btn btn-primary"><span class="material-symbols-outlined">add_shortcut_to_drive</span>GDrive</a>
+        <a href="https://discord.com/channels/@me" class="btn btn-primary"
+            ><span class="material-symbols-outlined">sports_esports</span
+            >Discord</a
+        >
 
-		<a href="https://todoist.com/app/upcoming" class="btn btn-secondary"><span class="material-symbols-outlined">task</span>Todoist</a>
+        <a href="https://drive.google.com/drive/" class="btn btn-primary"
+            ><span class="material-symbols-outlined">add_shortcut_to_drive</span
+            >GDrive</a
+        >
 
-		<a href="https://docs.google.com/spreadsheets/d/1DWzJnR7lbqFVEcdFNDsYROnkS3Vek6LAIusTJuglwW4/edit#gid=0" class="bt btn-secondary"><span class="material-symbols-outlined">arrow_and_edge</span>Syncerndipity</a>
+        <a href="https://todoist.com/app/upcoming" class="btn btn-secondary"
+            ><span class="material-symbols-outlined">task</span>Todoist</a
+        >
 
-		<a href="https://github.com/AshSimmonds?tab=repositories" class="btn btn-primary"><span class="material-symbols-outlined">code</span>Repos</a>
+        <a
+            href="https://docs.google.com/spreadsheets/d/1DWzJnR7lbqFVEcdFNDsYROnkS3Vek6LAIusTJuglwW4/edit#gid=0"
+            class="bt btn-secondary"
+            ><span class="material-symbols-outlined">arrow_and_edge</span
+            >Syncerndipity</a
+        >
 
-		<a href="https://www.youtube.com/channel/UCwf-6jwIKj-uxLvdzAsmjtg/videos" class="btn btn-primary">Wanaka</a>
+        <a
+            href="https://github.com/AshSimmonds?tab=repositories"
+            class="btn btn-primary"
+            ><span class="material-symbols-outlined">code</span>Repos</a
+        >
+
+        <a
+            href="https://www.youtube.com/channel/UCwf-6jwIKj-uxLvdzAsmjtg/videos"
+            class="btn btn-primary">Wanaka</a
+        >
 
-		<a href="https://www.google.com/maps/place/McLaren+Vale+SA+5171/@-35.2052844,138.4701577,12z/data=!3m1!4b1!4m6!3m5!1s0x6ab125e53337b26d:0x5033654628eb7b0!8m2!3d-35.2192433!4d138.5448927!16zL20vMGZ4azg1?entry=ttu" class="btn btn-primary">MAPPY</a>
+        <a
+            href="https://www.google.com/maps/place/McLaren+Vale+SA+5171/@-35.2052844,138.4701577,12z/data=!3m1!4b1!4m6!3m5!1s0x6ab125e53337b26d:0x5033654628eb7b0!8m2!3d-35.2192433!4d138.5448927!16zL20vMGZ4azg1?entry=ttu"
+            class="btn btn-primary">MAPPY</a
+        >
 
+        <h2>AIML</h2>
+
+        <a href="https://chat.openai.com/" class="btn btn-primary">ChatGPT</a>
 
-	    
-	<h2>AIML</h2>
-	    
-	    <a href="https://chat.openai.com/" class="btn btn-primary">ChatGPT</a>
+        <a href="https://bard.google.com/" class="btn btn-primary">Bard</a>
 
-	    <a href="https://bard.google.com/" class="btn btn-primary">Bard</a>
+        <a
+            href="https://www.bing.com/search?form=MY02A3&OCID=MY02A3&showconv=1"
+            class="btn btn-primary">Bing</a
+        >
 
-		<a href="https://www.bing.com/search?form=MY02A3&OCID=MY02A3&showconv=1" class="btn btn-primary">Bing</a>
+        <a href="https://labs.openai.com/" class="btn btn-primary">Dall-E</a>
 
-		<a href="https://labs.openai.com/" class="btn btn-primary">Dall-E</a>
+        <a href="https://play.vercel.ai/?s=1" class="btn btn-primary"
+            >Vercel Playground</a
+        >
 
-		<a href="https://play.vercel.ai/?s=1" class="btn btn-primary">Vercel Playground</a>
+        <a href="asdf" class="btn btn-primary">asdf</a>
 
-		<a href="asdf" class="btn btn-primary">asdf</a>
+        <a href="asdf" class="btn btn-primary">asdf</a>
 
-		<a href="asdf" class="btn btn-primary">asdf</a>
+        <a href="asdf" class="btn btn-primary">asdf</a>
 
-		<a href="asdf" class="btn btn-primary">asdf</a>
+        <h2>desktop</h2>
 
-	    
-	<h2>desktop</h2>
-	    
-	    <a href="https://forum.vivaldi.net/user/ashsimmonds/posts" class="btn btn-primary">Vivaldi</a>
-	    
-	    <a href="https://chrome.google.com/webstore/detail/scrollbar-customizer/flffekjijpabhjgpoapooggncnmcjopa" class="btn btn-primary">Scrollbars</a>
-	    
-	    <a href="https://github.com/AshSimmonds/unstylish" class="btn btn-primary">Unstylish</a>
-	    
-	    <a href="https://github.com/valinet/ExplorerPatcher" class="btn btn-primary">Explorer Patcher</a>
-	    
-	    <a href="https://github.com/microsoft/PowerToys" class="btn btn-primary">PowerToys</a>
-	    
-	    <a href="https://resource.dopus.com/u/ashsimmonds/summary" class="btn btn-primary">Directory Opus</a>
-	    
-	    <a href="https://github.com/Abdelrhman-AK/WinPaletter" class="btn btn-primary">WinPaletter</a>
-	    
+        <a
+            href="https://forum.vivaldi.net/user/ashsimmonds/posts"
+            class="btn btn-primary">Vivaldi</a
+        >
 
-	    
-	    <h2>youtube</h2>
+        <a
+            href="https://chrome.google.com/webstore/detail/scrollbar-customizer/flffekjijpabhjgpoapooggncnmcjopa"
+            class="btn btn-primary">Scrollbars</a
+        >
 
-		<a href="https://www.youtube.com/playlist?list=PLpTPRepz0Took-WLnAicMPzG8-D1bQjDY" class="btn btn-primary">nowish</a>
+        <a
+            href="https://github.com/AshSimmonds/unstylish"
+            class="btn btn-primary">Unstylish</a
+        >
 
-		<a href="https://www.youtube.com/playlist?list=PLpTPRepz0TorxXBmu9N-FALLoKHJGfmwy" class="btn btn-primary">todayish</a>
+        <a
+            href="https://github.com/valinet/ExplorerPatcher"
+            class="btn btn-primary">Explorer Patcher</a
+        >
 
-	    <a href="https://www.youtube.com/playlist?list=PLpTPRepz0TorlHkQhdr1E7B8T8A7ZU3Gk" class="btn btn-primary">geek</a>
+        <a href="https://github.com/microsoft/PowerToys" class="btn btn-primary"
+            >PowerToys</a
+        >
 
-	    		<a href="https://www.youtube.com/playlist?list=PLpTPRepz0Topx9llXlhvAh5rJkz_sc8Z7" class="btn btn-primary">gamers</a>
+        <a
+            href="https://resource.dopus.com/u/ashsimmonds/summary"
+            class="btn btn-primary">Directory Opus</a
+        >
 
-	    
-	    
-	    	<a href="https://www.youtube.com/watch?v=p3bDE9kszMc&list=PL95NP4bDITAln7fq-cCqzOFE15UvVthuL" class="btn btn-primary">lost terminal</a>
+        <a
+            href="https://github.com/Abdelrhman-AK/WinPaletter"
+            class="btn btn-primary">WinPaletter</a
+        >
 
-	    	<a href="https://quiteaplaylist.com/search?url=https://www.youtube.com/playlist?list=PLpTPRepz0TorxXBmu9N-FALLoKHJGfmwy" class="btn btn-primary">Missing vids from playlist</a>
-	    
-	    
-	    
-	<h2>Sleep</h2>
-	    
-	    <a href="https://www.youtube.com/watch?v=R8KRBSBLigU" class="btn btn-primary">TNG bridge</a>
-	    
-	    <a href="https://music.youtube.com/playlist?list=PLpTPRepz0TorhfvVifB0dPTIRIZ4rQ8uG" class="btn btn-primary">TBoGT</a>
-	    
-	    
-	    
-	<h2>Blue Dwarf Space</h2>
+        <h2>youtube</h2>
 
-		<a href="https://bluedwarf.space/" class="btn btn-primary">hoam</a>
+        <a
+            href="https://www.youtube.com/playlist?list=PLpTPRepz0Took-WLnAicMPzG8-D1bQjDY"
+            class="btn btn-primary">nowish</a
+        >
 
-		<a href="https://app.slack.com/client/TA9P72UMD/G0129R3F5RQ" class="btn btn-primary">Slack ICC</a>
+        <a
+            href="https://www.youtube.com/playlist?list=PLpTPRepz0TorxXBmu9N-FALLoKHJGfmwy"
+            class="btn btn-primary">todayish</a
+        >
 
-		<a href="https://app.slack.com/client/T03FT679VLY/" class="btn btn-primary">Slack BDS</a>
+        <a
+            href="https://www.youtube.com/playlist?list=PLpTPRepz0TorlHkQhdr1E7B8T8A7ZU3Gk"
+            class="btn btn-primary">geek</a
+        >
 
-		<a href="https://trello.com/" class="btn btn-primary">Trello</a>
+        <a
+            href="https://www.youtube.com/playlist?list=PLpTPRepz0Topx9llXlhvAh5rJkz_sc8Z7"
+            class="btn btn-primary">gamers</a
+        >
 
-		<a href="https://www.notion.so/" class="btn btn-primary">Notion</a>
+        <a
+            href="https://www.youtube.com/watch?v=p3bDE9kszMc&list=PL95NP4bDITAln7fq-cCqzOFE15UvVthuL"
+            class="btn btn-primary">lost terminal</a
+        >
+
+        <a
+            href="https://quiteaplaylist.com/search?url=https://www.youtube.com/playlist?list=PLpTPRepz0TorxXBmu9N-FALLoKHJGfmwy"
+            class="btn btn-primary">Missing vids from playlist</a
+        >
+
+        <h2>Sleep</h2>
+
+        <a
+            href="https://www.youtube.com/watch?v=R8KRBSBLigU"
+            class="btn btn-primary">TNG bridge</a
+        >
+
+        <a
+            href="https://music.youtube.com/playlist?list=PLpTPRepz0TorhfvVifB0dPTIRIZ4rQ8uG"
+            class="btn btn-primary">TBoGT</a
+        >
+
+        <h2>Blue Dwarf Space</h2>
+
+        <a href="https://bluedwarf.space/" class="btn btn-primary">hoam</a>
+
+        <a
+            href="https://app.slack.com/client/TA9P72UMD/G0129R3F5RQ"
+            class="btn btn-primary">Slack ICC</a
+        >
+
+        <a
+            href="https://app.slack.com/client/T03FT679VLY/"
+            class="btn btn-primary">Slack BDS</a
+        >
+
+        <a href="https://trello.com/" class="btn btn-primary">Trello</a>
+
+        <a href="https://www.notion.so/" class="btn btn-primary">Notion</a>
+
+        <a href="https://miro.com/app/dashboard/" class="btn btn-primary"
+            >Miro</a
+        >
+
+        <a href="https://bluedwarf.space/youtubersfeed/" class="btn btn-primary"
+            >Youtubers</a
+        >
+
+        <a href="https://bluedwarf.space/news/" class="btn btn-primary">Newsy</a
+        >
+
+        <h2>Kaizen Sports Group</h2>
+
+        <a
+            href="https://github.com/AshSimmonds/kaizen_13_blazor_server_smarteraspdotnet"
+            class="btn btn-primary">Repo</a
+        >
+
+        <a href="https://app.appsmith.com/applications" class="btn btn-primary"
+            >Appsmith admin</a
+        >
+
+        <h2>Procrastination</h2>
+
+        <a
+            href="https://www.nytimes.com/games/wordle/index.html"
+            class="btn btn-primary">wordle</a
+        >
+
+        <a href="https://www.quordle.com" class="btn btn-primary">quordle</a>
+
+        <a href="https://www.heardle.app" class="btn btn-primary">heardle</a>
+
+        <a href="https://worldle.teuteuf.fr/" class="btn btn-primary">worldle</a
+        >
+
+        <a href="http://www.windows93.net/#!solitude" class="btn btn-primary"
+            >solitude</a
+        >
+
+        <h2>reddit</h2>
+
+        <a
+            href="https://www.reddit.com/.compact"
+            class="btn btn-secondary md:hidden">reddit</a
+        >
+        <a
+            href="https://www.reddit.com/"
+            class="btn btn-primary hidden md:block">reddit</a
+        >
+
+        <a
+            href="https://www.reddit.com/r/Adelaide/new/.compact"
+            class="btn btn-secondary md:hidden">r/adl</a
+        >
+        <a
+            href="https://www.reddit.com/r/Adelaide/new/"
+            class="btn btn-accent hidden md:block">r/adelaide</a
+        >
+
+        <a
+            href="https://www.reddit.com/r/NewZealand/new/.compact"
+            class="btn btn-secondary md:hidden">r/NZ</a
+        >
+        <a
+            href="https://www.reddit.com/r/NewZealand/new/"
+            class="btn btn-accent hidden md:block">r/NZ</a
+        >
+
+        <a
+            href="https://www.reddit.com/r/all/.compact"
+            class="btn btn-secondary md:hidden">r/all</a
+        >
+        <a
+            href="https://www.reddit.com/r/all/"
+            class="btn btn-primary hidden md:block">r/all</a
+        >
+
+        <h2>twitter</h2>
+
+        <a
+            href="https://twitter.com/search?q=AshSimmonds&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/1300616756/100175906_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @AshSimmonds</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=carnivorescreed&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/378800000259200428/7351c814a13f95bb0b5b56b539d64ecc_200x200.jpeg"
+                style="width: 40px; margin-top: 0px"
+            /> @CarnivoresCreed</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=ashgeekmonds&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/1614748845422047234/2bK0LkKC_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @AshGeekmonds</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=bluedwarfash&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/1614951674485026817/57jGKwc4_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @BlueDwarfAsh</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=bluedwarfspace&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/1497013390400974848/9hKAbKMM_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @BlueDwarfSpace</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=nusquamu&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/1614748845422047234/2bK0LkKC_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @nusquamu</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=NaturalStupidty&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/1551478224344928256/bxIBmGd-_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @NaturalStupidty</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=NaturalDumbness&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/1551497495305687040/P7e1BHJ6_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @NaturalDumbness</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=JWSTrollogy&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/1492186724134694912/JGyNeNlf_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @JWSTrollogy</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=Magic8BaIl&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/1086222756008456198/95EDAUM5_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @Magic8BaIl</a
+        >
+
+        <a
+            href="https://twitter.com/search?q=SpockifyMe&src=typed_query&f=live"
+            class="btn btn-primary"
+            ><img
+                src="https://pbs.twimg.com/profile_images/720154510312611840/aIXNekFK_200x200.jpg"
+                style="width: 40px; margin-top: 0px"
+            /> @SpockifyMe</a
+        >
+
+        <h2>teevee</h2>
+
+        <a
+            href="https://watch.foxtel.com.au/app/#/live/fis"
+            class="btn btn-primary">Foxtel SciFi</a
+        >
+
+        <a
+            href="https://pluto.tv/en/live-tv/star-trek-1"
+            class="btn btn-primary">Pluto Star Trek (VPN)</a
+        >
+
+        <a
+            href="https://docs.google.com/spreadsheets/d/1pnVyPWoRlYYPuxyKU0MlN1B75AkdqfU6WY8QP_hiWNc/edit#gid=0"
+            class="btn btn-primary">Trek nonsense spreadsheet</a
+        >
+
+        <a href="https://tubitv.com/category/queue" class="btn btn-primary"
+            >tubi tv</a
+        >
+
+        <h2>moovees</h2>
+
+        <a
+            href="https://www.netflix.com/browse/m/my-list"
+            class="btn btn-primary">Netflix</a
+        >
+
+        <a
+            href="https://www.primevideo.com/mystuff/watchlist/all/prime/ref=atv_mys_wl_prm?page=1&sort=DATE_ADDED_DESC"
+            class="btn btn-primary">AMZN watch</a
+        >
+
+        <a
+            href="https://www.reddit.com/user/ashsimmonds/m/moovees/"
+            class="btn btn-primary">Reddit moovees</a
+        >
+
+        <a
+            href="https://www.youtube.com/watch?v=6wryPio0iW8"
+            class="btn btn-primary">spankles</a
+        >
+
+        <a
+            href="https://www.youtube.com/playlist?list=PLpTPRepz0ToomiVvd52I-FXzszMcpahQC"
+            class="btn btn-primary">Youtube moovees (VPN)</a
+        >
+
+        <a
+            href="https://www.youtube.com/channel/UCk9ccH_roCC9-122sOAQMxw"
+            class="btn btn-primary">Youtube moovees TOO (VPN)</a
+        >
+
+        <a
+            href="https://www.vudu.com/content/movies/movieslist?AVAILABLE_FOR_FREE=Yes&GENRE=Sci-Fi&SORT_ORDER=Most%2520Watched"
+            class="btn btn-primary">Vudu</a
+        >
+
+        <a href="https://tubitv.com/category/queue" class="btn btn-primary"
+            >tubi tv</a
+        >
+
+        <a
+            href="https://docs.google.com/spreadsheets/d/1jYo7FZJRXW_qghHAEnmFUws6b2yIGS-lZCnRGkxLUCY/edit#gid=0"
+            class="btn btn-primary">Ratings spreadsheet</a
+        >
+
+        <h2>dev / programming</h2>
+
+        <input
+            type="text"
+            value="asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf"
+            id="vscodesettings"
+        />
+        <button onclick="copySettings()">Copy</button>
+
+        <a href="https://gitpod.io/workspaces" class="btn btn-primary"
+            >gitpod.io</a
+        >
+
+        <a href="https://stackblitz.com/" class="btn btn-primary">stackblitz</a>
+
+        <a href="https://codesandbox.io/dashboard" class="btn btn-primary"
+            >codesandbox.io</a
+        >
+
+        <a href="https://app.appsmith.com/applications" class="btn btn-primary"
+            >appsmith</a
+        >
+
+        <a href="https://admin.dotenx.com" class="btn btn-primary"
+            >DotENX (nocode automation)</a
+        >
+
+        <h2>tech stacks</h2>
+
+        <a href="https://fresh.deno.dev" class="btn btn-primary">Deno Fresh</a>
+
+        <a
+            href="https://github.com/t3-oss/create-t3-app"
+            class="btn btn-primary">T3-Stack</a
+        >
+
+        <a
+            href="https://github.com/AshSimmonds/t3-stack-tutorial-and-resources#instructions"
+            class="btn btn-primary">My T3 tutorial</a
+        >
+
+        <a href="https://github.com/rocicorp/replicache" class="btn btn-primary"
+            >Replicache</a
+        >
 
-		<a href="https://miro.com/app/dashboard/" class="btn btn-primary">Miro</a>
-
-		<a href="https://bluedwarf.space/youtubersfeed/" class="btn btn-primary">Youtubers</a>
-
-		<a href="https://bluedwarf.space/news/" class="btn btn-primary">Newsy</a>
-
-	    
-	    
-	  
-	<h2>Kaizen Sports Group</h2>	    
-	    
-		<a href="https://github.com/AshSimmonds/kaizen_13_blazor_server_smarteraspdotnet" class="btn btn-primary">Repo</a>
-
-		<a href="https://app.appsmith.com/applications" class="btn btn-primary">Appsmith admin</a>
-	    
-	    
-	    
-	    
-	<h2>Procrastination</h2>
-
-		<a href="https://www.nytimes.com/games/wordle/index.html" class="btn btn-primary">wordle</a>
-
-		<a href="https://www.quordle.com" class="btn btn-primary">quordle</a>
-
-		<a href="https://www.heardle.app" class="btn btn-primary">heardle</a>
-
-		<a href="https://worldle.teuteuf.fr/" class="btn btn-primary">worldle</a>
-
-		<a href="http://www.windows93.net/#!solitude" class="btn btn-primary">solitude</a>
-
-	    
-	    
-	    
-	<h2>reddit</h2>
-
-		<a href="https://www.reddit.com/.compact" class="btn btn-secondary md:hidden">reddit</a>
-		<a href="https://www.reddit.com/" class="btn btn-primary hidden md:block">reddit</a>
-
-		<a href="https://www.reddit.com/r/Adelaide/new/.compact" class="btn btn-secondary md:hidden">r/adl</a>
-		<a href="https://www.reddit.com/r/Adelaide/new/" class="btn btn-accent hidden md:block">r/adelaide</a>
-
-		<a href="https://www.reddit.com/r/NewZealand/new/.compact" class="btn btn-secondary md:hidden">r/NZ</a>
-		<a href="https://www.reddit.com/r/NewZealand/new/" class="btn btn-accent hidden md:block">r/NZ</a>
-
-		<a href="https://www.reddit.com/r/all/.compact" class="btn btn-secondary md:hidden">r/all</a>
-		<a href="https://www.reddit.com/r/all/" class="btn btn-primary hidden md:block">r/all</a>
-
-	    
-	    
-	    
-	<h2>twitter</h2>
-
-		<a href="https://twitter.com/search?q=AshSimmonds&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/1300616756/100175906_200x200.jpg" style="width: 40px; margin-top: 0px" /> @AshSimmonds</a>
-
-	    	<a href="https://twitter.com/search?q=carnivorescreed&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/378800000259200428/7351c814a13f95bb0b5b56b539d64ecc_200x200.jpeg" style="width: 40px; margin-top: 0px" /> @CarnivoresCreed</a>
-
-		<a href="https://twitter.com/search?q=ashgeekmonds&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/1614748845422047234/2bK0LkKC_200x200.jpg" style="width: 40px; margin-top: 0px" /> @AshGeekmonds</a>
-
-		<a href="https://twitter.com/search?q=bluedwarfash&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/1614951674485026817/57jGKwc4_200x200.jpg" style="width: 40px; margin-top: 0px" /> @BlueDwarfAsh</a>
-
-    		<a href="https://twitter.com/search?q=bluedwarfspace&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/1497013390400974848/9hKAbKMM_200x200.jpg" style="width: 40px; margin-top: 0px" /> @BlueDwarfSpace</a>
-
-       		<a href="https://twitter.com/search?q=nusquamu&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/1614748845422047234/2bK0LkKC_200x200.jpg" style="width: 40px; margin-top: 0px" /> @nusquamu</a>
-
-		<a href="https://twitter.com/search?q=NaturalStupidty&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/1551478224344928256/bxIBmGd-_200x200.jpg" style="width: 40px; margin-top: 0px" /> @NaturalStupidty</a>
-
-		<a href="https://twitter.com/search?q=NaturalDumbness&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/1551497495305687040/P7e1BHJ6_200x200.jpg" style="width: 40px; margin-top: 0px" /> @NaturalDumbness</a>
-	    
-		<a href="https://twitter.com/search?q=JWSTrollogy&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/1492186724134694912/JGyNeNlf_200x200.jpg" style="width: 40px; margin-top: 0px" /> @JWSTrollogy</a>
-
-		<a href="https://twitter.com/search?q=Magic8BaIl&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/1086222756008456198/95EDAUM5_200x200.jpg" style="width: 40px; margin-top: 0px" /> @Magic8BaIl</a>
-
-		<a href="https://twitter.com/search?q=SpockifyMe&src=typed_query&f=live" class="btn btn-primary"><img src="https://pbs.twimg.com/profile_images/720154510312611840/aIXNekFK_200x200.jpg" style="width: 40px; margin-top: 0px" /> @SpockifyMe</a>
-	    
-	    
-	    
-	 	    
-	    
-	    
-	<h2>teevee</h2>
-
-		<a href="https://watch.foxtel.com.au/app/#/live/fis" class="btn btn-primary">Foxtel SciFi</a>
-
-		<a href="https://pluto.tv/en/live-tv/star-trek-1" class="btn btn-primary">Pluto Star Trek (VPN)</a>
-
-		<a href="https://docs.google.com/spreadsheets/d/1pnVyPWoRlYYPuxyKU0MlN1B75AkdqfU6WY8QP_hiWNc/edit#gid=0" class="btn btn-primary">Trek nonsense spreadsheet</a>
-
-		<a href="https://tubitv.com/category/queue" class="btn btn-primary">tubi tv</a>
-
-	    
-	    
-	    
-	<h2>moovees</h2>
-
-		<a href="https://www.netflix.com/browse/m/my-list" class="btn btn-primary">Netflix</a>
-
-		<a href="https://www.primevideo.com/mystuff/watchlist/all/prime/ref=atv_mys_wl_prm?page=1&sort=DATE_ADDED_DESC" class="btn btn-primary">AMZN watch</a>
-
-		<a href="https://www.reddit.com/user/ashsimmonds/m/moovees/" class="btn btn-primary">Reddit moovees</a>
-	    
-		<a href="https://www.youtube.com/watch?v=6wryPio0iW8" class="btn btn-primary">spankles</a>
-
-		<a href="https://www.youtube.com/playlist?list=PLpTPRepz0ToomiVvd52I-FXzszMcpahQC" class="btn btn-primary">Youtube moovees (VPN)</a>
-
-	    	<a href="https://www.youtube.com/channel/UCk9ccH_roCC9-122sOAQMxw" class="btn btn-primary">Youtube moovees TOO (VPN)</a>
-	    
-   		<a href="https://www.vudu.com/content/movies/movieslist?AVAILABLE_FOR_FREE=Yes&GENRE=Sci-Fi&SORT_ORDER=Most%2520Watched" class="btn btn-primary">Vudu</a>
-	    
-		<a href="https://tubitv.com/category/queue" class="btn btn-primary">tubi tv</a>
-
-		<a href="https://docs.google.com/spreadsheets/d/1jYo7FZJRXW_qghHAEnmFUws6b2yIGS-lZCnRGkxLUCY/edit#gid=0" class="btn btn-primary">Ratings spreadsheet</a>
-
-	    
-	    
-	    
-	<h2>dev / programming</h2>
-
-		<input type="text" value="asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf" id="vscodesettings" /> <button onclick="copySettings()">Copy</button>
-
-		<a href="https://gitpod.io/workspaces" class="btn btn-primary">gitpod.io</a>
-
-		<a href="https://stackblitz.com/" class="btn btn-primary">stackblitz</a>
-
-		<a href="https://codesandbox.io/dashboard" class="btn btn-primary">codesandbox.io</a>
-
-		<a href="https://app.appsmith.com/applications" class="btn btn-primary">appsmith</a>
-	    
-	    <a href="https://admin.dotenx.com" class="btn btn-primary">DotENX (nocode automation)</a>
-
-	    
-
-	<h2>tech stacks</h2>
-	
-	    <a href="https://fresh.deno.dev" class="btn btn-primary">Deno Fresh</a>
-	    
-	    <a href="https://github.com/t3-oss/create-t3-app" class="btn btn-primary">T3-Stack</a>
-	    
-	    <a href="https://github.com/AshSimmonds/t3-stack-tutorial-and-resources#instructions" class="btn btn-primary">My T3 tutorial</a>
-	    
-	    <a href="https://github.com/rocicorp/replicache" class="btn btn-primary">Replicache</a>
-
-	    
-	    
         <h2>Deployments</h2>
-	    
-	    <a href="https://dash.deno.com/projects" class="btn btn-primary">Deno Deploy</a>
 
-	    <a href="https://vercel.com/dashboard" class="btn btn-primary">Vercel</a>
-	    
-	    <a href="https://railway.app/dashboard" class="btn btn-primary">Railway</a>
-	    
-	    <a href="https://app.supabase.com" class="btn btn-primary">SupaBase</a>
-	    	    
-	    
-	    
-	<h2>Database</h2>
-	    
-	    <a href="https://www.edgedb.com" class="btn btn-primary">EdgeDB</a>
+        <a href="https://dash.deno.com/projects" class="btn btn-primary"
+            >Deno Deploy</a
+        >
 
-	    <a href="https://app.supabase.com" class="btn btn-primary">SupaBase</a>
+        <a href="https://vercel.com/dashboard" class="btn btn-primary">Vercel</a
+        >
 
-    	    <a href="https://railway.app/dashboard" class="btn btn-primary">Railway</a>
+        <a href="https://railway.app/dashboard" class="btn btn-primary"
+            >Railway</a
+        >
 
-	    <a href="https://bit.io/console" class="btn btn-primary">BitIO</a>
+        <a href="https://app.supabase.com" class="btn btn-primary">SupaBase</a>
 
-	    
-	    
-	    
-	<h2>open source tool collections</h2>
-	
-	    <a href="https://free-for.dev/" class="btn btn-primary">Free For Dev</a>
+        <h2>Database</h2>
 
-	    <a href="https://cryptpad.fr" class="btn btn-primary">CryptPad - MS Office-like</a>
-	    
-	    <a href="https://www.authelia.com" class="btn btn-primary">Authelia</a>
-	    
-	    <a href="https://blog.scaleway.com/40-open-source-projects/" class="btn btn-primary">40 tools</a>
-	    
-	    <a href="https://app.daily.dev" class="btn btn-primary">Daily Dev</a>
-	    
-	    <a href="https://tiny-helpers.dev" class="btn btn-primary">Tiny Helpers</a>
-	    
-	    
-	    
-	<h2>UI / UX design stuff</h2>
-	    
-	    <a href="https://www.checklist.design" class="btn btn-primary">UI UX Checklist</a>
+        <a href="https://www.edgedb.com" class="btn btn-primary">EdgeDB</a>
 
-		<a href="https://tailwindcss.com/docs/aspect-ratio" class="btn btn-primary">Tailwindcss</a>
+        <a href="https://app.supabase.com" class="btn btn-primary">SupaBase</a>
 
-		<a href="https://daisyui.com/components/" class="btn btn-primary">DaisyUI</a>
-	    
-	    	<a href="https://www.hyperui.dev" class="btn btn-primary">HyperUI</a>
+        <a href="https://railway.app/dashboard" class="btn btn-primary"
+            >Railway</a
+        >
 
-		<a href="https://shuffle.dev/dashboard" class="btn btn-primary">ShuffleDev</a>
-	    
-	    <a href="https://uiverse.io" class="btn btn-primary">UIverse</a>
+        <a href="https://bit.io/console" class="btn btn-primary">BitIO</a>
 
-	    <a href="https://twitter.com/shuding_/status/1552438750470340610">Fade In</a>
-	    
-	    <a href="https://tamagui.dev" class="btn btn-primary">TamaGUI</a>
-	    
-	    <a href="https://codepen.io/propjockey/pen/oNqWEBB" class="btn btn-primary">Cyberpunk Cards</a>
-	    
-	    <a href="https://augmented-ui.com" class="btn btn-primary">Augmented UI</a>
-	    
-	    <a href="https://www.radix-ui.com" class="btn btn-primary">RadixUI</a>
-	    
-	    <a href="https://www.uiguideline.com/components" class="btn btn-primary">UI Components Handbook</a>
-	    
-	    <a href="https://www.designsystems.com" class="btn btn-primary">Design + Development</a>
+        <h2>open source tool collections</h2>
 
-	
-	<h2>API</h2>
-	    
-	    <a href="https://rapidapi.com/hub" class="btn btn-primary">RapidAPI</a>
-	    
-	    <a href="https://www.themoviedb.org/documentation/api" class="btn btn-primary">MovieDB</a>
-	    
-	    <a href="https://newsapi.org/account" class="btn btn-primary">News</a>
-	    
-	    
-	<h2>webmeister</h2>
+        <a href="https://free-for.dev/" class="btn btn-primary">Free For Dev</a>
 
-		<a href="https://manage.crazydomains.com.au/members/" class="btn btn-primary">Crazy Domains</a>
+        <a href="https://cryptpad.fr" class="btn btn-primary"
+            >CryptPad - MS Office-like</a
+        >
 
-		<a href="https://account.godaddy.com/products" class="btn btn-primary">GoDaddy</a>
+        <a href="https://www.authelia.com" class="btn btn-primary">Authelia</a>
 
-		<a href="https://cloud.digitalocean.com/projects/ab9fa078-6d8a-4894-808a-0907d07f5b13/resources?i=07e4dc" class="btn btn-primary">Digital Ocean</a>
+        <a
+            href="https://blog.scaleway.com/40-open-source-projects/"
+            class="btn btn-primary">40 tools</a
+        >
 
-		<a href="https://member5-4.smarterasp.net/account/account_screen" class="btn btn-primary">SmarterASP</a>
+        <a href="https://app.daily.dev" class="btn btn-primary">Daily Dev</a>
 
-	    	<a href="https://ap.www.namecheap.com/domains/list/" class="btn btn-primary">NameCheap domains</a>
-	    
-	    
-	    
-	<h2>AI / ML</h2>
-	    
-		<a href="https://beta.openai.com/" class="btn btn-primary">OpenAI (beta)</a>
-	    
-		<a href="https://labs.openai.com/c/private/" class="btn btn-primary">DALL-E</a>
+        <a href="https://tiny-helpers.dev" class="btn btn-primary"
+            >Tiny Helpers</a
+        >
 
-		<a href="https://replicate.com/ashsimmonds/" class="btn btn-primary">Replicate</a>
+        <h2>UI / UX design stuff</h2>
 
-		<a href="https://www.craiyon.com/" class="btn btn-primary">Craiyon</a>
+        <a href="https://www.checklist.design" class="btn btn-primary"
+            >UI UX Checklist</a
+        >
 
-		<a href="https://www.midjourney.com/" class="btn btn-primary">Midjourney</a>
+        <a
+            href="https://tailwindcss.com/docs/aspect-ratio"
+            class="btn btn-primary">Tailwindcss</a
+        >
 
-	    	<a href="https://smodin.io/" class="btn btn-primary">Smodin</a>
+        <a href="https://daisyui.com/components/" class="btn btn-primary"
+            >DaisyUI</a
+        >
 
-	    	<a href="https://app.roboflow.com/" class="btn btn-primary">Roboflow</a>
-		
-	    	<a href="https://app.albera.com/u/ashs3dae02/" class="btn btn-primary">Albera</a>
-	    
-	    	<a href="https://panel.ai-writer.com/" class="btn btn-primary">AI-Writer</a>
-	    
-	    	<a href="https://rytr.me/" class="btn btn-primary">Rytr</a>
-	    
-	    	<a href="https://www.reddit.com/r/SimulacraBot/" class="btn btn-primary">Simulacra</a>
-	    
-	    
-	    
-	    
-	<h2>moozak</h2>
+        <a href="https://www.hyperui.dev" class="btn btn-primary">HyperUI</a>
 
-		<a href="https://energy981.com/listen" class="btn btn-primary">Energy98</a>
+        <a href="https://shuffle.dev/dashboard" class="btn btn-primary"
+            >ShuffleDev</a
+        >
 
-		<a href="https://www.abc.net.au/listenlive/doublej/" class="btn btn-primary">DoubleJ</a>
+        <a href="https://uiverse.io" class="btn btn-primary">UIverse</a>
 
-		<a href="https://music.youtube.com/playlist?list=PLpTPRepz0Top25ZjEiFT235B76AdCCH4v" class="btn btn-primary">discobath</a>
+        <a href="https://twitter.com/shuding_/status/1552438750470340610"
+            >Fade In</a
+        >
 
-		<a href="https://music.youtube.com/playlist?list=PLpTPRepz0TorHHKb_wB5tzNA8u-1s2Blt" class="btn btn-primary">h4x0r</a>
+        <a href="https://tamagui.dev" class="btn btn-primary">TamaGUI</a>
 
-		<a href="https://music.youtube.com/playlist?list=PLpTPRepz0TorhfvVifB0dPTIRIZ4rQ8uG" class="btn btn-primary">TBoGT</a>
+        <a
+            href="https://codepen.io/propjockey/pen/oNqWEBB"
+            class="btn btn-primary">Cyberpunk Cards</a
+        >
 
-		<a href="https://music.youtube.com/playlist?list=PLpTPRepz0Toq9YD18TDIRy3xp_K_V5YAH" class="btn btn-primary">techno</a>
+        <a href="https://augmented-ui.com" class="btn btn-primary"
+            >Augmented UI</a
+        >
 
-		<a href="https://music.youtube.com/playlist?list=PL0ED42B989CCD6CCF" class="btn btn-primary">Samantha</a>
+        <a href="https://www.radix-ui.com" class="btn btn-primary">RadixUI</a>
 
-		<a href="https://music.youtube.com/playlist?list=PL14D37E6E1863E867" class="btn btn-primary">Kristen</a>
+        <a href="https://www.uiguideline.com/components" class="btn btn-primary"
+            >UI Components Handbook</a
+        >
 
-		<a href="https://music.youtube.com/playlist?list=PLpTPRepz0ToojExPdqBqc7wnY-3aIryCp" class="btn btn-primary">Rhonda</a>
+        <a href="https://www.designsystems.com" class="btn btn-primary"
+            >Design + Development</a
+        >
 
-		<a href="https://music.youtube.com/playlist?list=PLpTPRepz0ToqOzFKa8Wbd6dzMSBwUQzOk" class="btn btn-primary">Kat</a>
+        <h2>API</h2>
 
-	    
-	    
-	<h2>stuff I don't use often but might / #TODO maybeeee</h2>
-	    
-		(date indicates last time I checked it was useful to daily life, and ended up here, forgotten, but not gone)
+        <a href="https://rapidapi.com/hub" class="btn btn-primary">RapidAPI</a>
 
-		<a href="https://app.bangle.io/ws/vault/bangle-io.md" class="btn btn-primary">Bangle</a> - 14-May-22
+        <a
+            href="https://www.themoviedb.org/documentation/api"
+            class="btn btn-primary">MovieDB</a
+        >
 
-		<a href="https://gitpod.io/workspaces" class="btn btn-primary">gitpod</a> - 14-May-22
+        <a href="https://newsapi.org/account" class="btn btn-primary">News</a>
 
-		<a href="https://github.com/AshSimmonds/new-screen-setup" class="btn btn-primary">new scr</a> - 14-May-22
+        <h2>webmeister</h2>
 
+        <a
+            href="https://manage.crazydomains.com.au/members/"
+            class="btn btn-primary">Crazy Domains</a
+        >
 
-	<a href="https://github.com/AshSimmonds/homey">src</a>
+        <a href="https://account.godaddy.com/products" class="btn btn-primary"
+            >GoDaddy</a
+        >
 
+        <a
+            href="https://cloud.digitalocean.com/projects/ab9fa078-6d8a-4894-808a-0907d07f5b13/resources?i=07e4dc"
+            class="btn btn-primary">Digital Ocean</a
+        >
+
+        <a
+            href="https://member5-4.smarterasp.net/account/account_screen"
+            class="btn btn-primary">SmarterASP</a
+        >
+
+        <a
+            href="https://ap.www.namecheap.com/domains/list/"
+            class="btn btn-primary">NameCheap domains</a
+        >
+
+        <h2>AI / ML</h2>
+
+        <a href="https://beta.openai.com/" class="btn btn-primary"
+            >OpenAI (beta)</a
+        >
+
+        <a href="https://labs.openai.com/c/private/" class="btn btn-primary"
+            >DALL-E</a
+        >
+
+        <a href="https://replicate.com/ashsimmonds/" class="btn btn-primary"
+            >Replicate</a
+        >
+
+        <a href="https://www.craiyon.com/" class="btn btn-primary">Craiyon</a>
+
+        <a href="https://www.midjourney.com/" class="btn btn-primary"
+            >Midjourney</a
+        >
+
+        <a href="https://smodin.io/" class="btn btn-primary">Smodin</a>
+
+        <a href="https://app.roboflow.com/" class="btn btn-primary">Roboflow</a>
+
+        <a href="https://app.albera.com/u/ashs3dae02/" class="btn btn-primary"
+            >Albera</a
+        >
+
+        <a href="https://panel.ai-writer.com/" class="btn btn-primary"
+            >AI-Writer</a
+        >
+
+        <a href="https://rytr.me/" class="btn btn-primary">Rytr</a>
+
+        <a href="https://www.reddit.com/r/SimulacraBot/" class="btn btn-primary"
+            >Simulacra</a
+        >
+
+        <h2>moozak</h2>
+
+        <a href="https://energy981.com/listen" class="btn btn-primary"
+            >Energy98</a
+        >
+
+        <a
+            href="https://www.abc.net.au/listenlive/doublej/"
+            class="btn btn-primary">DoubleJ</a
+        >
+
+        <a
+            href="https://music.youtube.com/playlist?list=PLpTPRepz0Top25ZjEiFT235B76AdCCH4v"
+            class="btn btn-primary">discobath</a
+        >
+
+        <a
+            href="https://music.youtube.com/playlist?list=PLpTPRepz0TorHHKb_wB5tzNA8u-1s2Blt"
+            class="btn btn-primary">h4x0r</a
+        >
+
+        <a
+            href="https://music.youtube.com/playlist?list=PLpTPRepz0TorhfvVifB0dPTIRIZ4rQ8uG"
+            class="btn btn-primary">TBoGT</a
+        >
+
+        <a
+            href="https://music.youtube.com/playlist?list=PLpTPRepz0Toq9YD18TDIRy3xp_K_V5YAH"
+            class="btn btn-primary">techno</a
+        >
+
+        <a
+            href="https://music.youtube.com/playlist?list=PL0ED42B989CCD6CCF"
+            class="btn btn-primary">Samantha</a
+        >
+
+        <a
+            href="https://music.youtube.com/playlist?list=PL14D37E6E1863E867"
+            class="btn btn-primary">Kristen</a
+        >
+
+        <a
+            href="https://music.youtube.com/playlist?list=PLpTPRepz0ToojExPdqBqc7wnY-3aIryCp"
+            class="btn btn-primary">Rhonda</a
+        >
+
+        <a
+            href="https://music.youtube.com/playlist?list=PLpTPRepz0ToqOzFKa8Wbd6dzMSBwUQzOk"
+            class="btn btn-primary">Kat</a
+        >
+
+        <h2>stuff I don't use often but might / #TODO maybeeee</h2>
+
+        (date indicates last time I checked it was useful to daily life, and
+        ended up here, forgotten, but not gone)
+
+        <a
+            href="https://app.bangle.io/ws/vault/bangle-io.md"
+            class="btn btn-primary">Bangle</a
+        > - 14-May-22
+
+        <a href="https://gitpod.io/workspaces" class="btn btn-primary">gitpod</a
+        > - 14-May-22
+
+        <a
+            href="https://github.com/AshSimmonds/new-screen-setup"
+            class="btn btn-primary">new scr</a
+        > - 14-May-22
+
+        <a href="https://github.com/AshSimmonds/homey">src</a>
     </div>
 </DefaultLayout>
-	
-	
+
 <script>
-	
-function copySettings() {
-  /* Get the text field */
-  var copyText = document.getElementById("vscodesettings");
+    function copySettings() {
+        /* Get the text field */
+        var copyText = document.getElementById("vscodesettings");
 
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-   /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
 
-  /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
-}
-	
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+    }
 </script>
-	
