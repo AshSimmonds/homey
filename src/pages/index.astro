@@ -20,6 +20,29 @@ const rightMeowTimeDateFriendly = rightMeow.toLocaleString(undefined, {
     }
 </script>
 
+
+
+<script>
+  document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    // Get the user's input
+    var query = document.getElementById('searchInput').value;
+    
+    // Encode the query for use in a URL
+    var encodedQuery = encodeURIComponent(query);
+    
+    // Construct the Perplexity URL
+    var perplexityUrl = 'https://www.perplexity.ai/?q=' + encodedQuery;
+    
+    // Redirect to Perplexity
+    window.location.href = perplexityUrl;
+  });
+</script>
+
+
+
+
 <style>
     .btn {
         text-decoration: none;
@@ -41,6 +64,22 @@ const rightMeowTimeDateFriendly = rightMeow.toLocaleString(undefined, {
         <h2 class="align">TODO</h2>
 
         - [ ] make TODO list - [ ] do TODO thingzzz
+
+
+
+        <h2 class="align">hmmm</a>
+        
+        
+        <form id="searchForm">
+          <input type="text" id="searchInput" placeholder="Perplexity">
+          <button type="submit">Interrogate</button>
+        </form>
+
+
+
+
+
+
 
         <h2 class="align">res prodentia</h2>
 
