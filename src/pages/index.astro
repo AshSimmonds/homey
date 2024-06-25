@@ -54,17 +54,18 @@ const detectedIp = Astro.clientAddress;
 
 <DefaultLayout>
     <div class="container mx-auto text-center">
+        Updated:
         <a
             href="https://github.com/AshSimmonds/homey/edit/main/src/pages/index.astro"
-            style=""
         >
-            Updated: {rightMeowTimeDateFriendly} GMT
+            {rightMeowTimeDateFriendly} GMT
         </a>
 
         <br />
 
-        <a href="https://www.whatismyip.com/ip/{detectedIp}" style="">
-            IP: {detectedIp}
+        IP:
+        <a href="https://www.whatismyip.com/ip/{detectedIp}" >
+            {detectedIp}
         </a>
 
         <br />
