@@ -53,28 +53,33 @@ const detectedIp = Astro.clientAddress;
 </style>
 
 <DefaultLayout>
-    <a
-        href="https://github.com/AshSimmonds/homey/edit/main/src/pages/index.astro"
-        style=""
-    >
-        Updated: {rightMeowTimeDateFriendly} GMT
-    </a>
-
-    <a href="https://www.whatismyip.com/ip/{detectedIp}" style="">
-        IP: {detectedIp}
-    </a>
-
     <div class="container mx-auto text-center">
-        <h2 class="align">TODO</h2>
+        <a
+            href="https://github.com/AshSimmonds/homey/edit/main/src/pages/index.astro"
+            style=""
+        >
+            Updated: {rightMeowTimeDateFriendly} GMT
+        </a>
 
-        - [ ] make TODO list - [ ] do TODO thingzzz
+        <br />
 
-        <h2 class="align">hmmm</h2>
+        <a href="https://www.whatismyip.com/ip/{detectedIp}" style="">
+            IP: {detectedIp}
+        </a>
 
-        <form id="searchForm">
-            <input type="text" id="searchInput" placeholder="Perplexity" />
-            <button type="submit">Interrogate</button>
+        <br />
+
+        <form id="searchForm" class="w-full">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="search..."
+                class="w-3/4 bg-black"
+            />
+            <button type="submit" class="btn w-1/5">Perplexity</button>
         </form>
+
+        <hr />
 
         <h2 class="align">res prodentia</h2>
 
