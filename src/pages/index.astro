@@ -12,6 +12,9 @@ const rightMeowTimeDateFriendly = rightMeow.toLocaleString(undefined, {
     hour12: false,
     minute: "2-digit",
 });
+
+const detectedIp = Astro.clientAddress;
+
 ---
 
 <script type="text/javascript">
@@ -56,9 +59,17 @@ const rightMeowTimeDateFriendly = rightMeow.toLocaleString(undefined, {
 <DefaultLayout>
     <a
         href="https://github.com/AshSimmonds/homey/edit/main/src/pages/index.astro"
-        style="float:right; font-size: xx-small;"
-        >Updated: {rightMeowTimeDateFriendly} GMT</a
+        style="" 
     >
+        Updated: {rightMeowTimeDateFriendly} GMT
+    </a>
+
+    <a
+        href="https://www.whatismyip.com/ip/{detectedIp}"
+        style="" 
+    >
+        IP: {detectedIp}
+    </a>
 
     <div class="container mx-auto text-center">
         <h2 class="align">TODO</h2>
