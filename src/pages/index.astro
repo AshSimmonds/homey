@@ -14,7 +14,6 @@ const rightMeowTimeDateFriendly = rightMeow.toLocaleString(undefined, {
 });
 
 const detectedIp = Astro.clientAddress;
-
 ---
 
 <script type="text/javascript">
@@ -23,28 +22,25 @@ const detectedIp = Astro.clientAddress;
     }
 </script>
 
-
-
 <script>
-  document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-    
-    // Get the user's input
-    var query = document.getElementById('searchInput').value;
-    
-    // Encode the query for use in a URL
-    var encodedQuery = encodeURIComponent(query);
-    
-    // Construct the Perplexity URL
-    var perplexityUrl = 'https://www.perplexity.ai/?q=' + encodedQuery;
-    
-    // Redirect to Perplexity
-    window.location.href = perplexityUrl;
-  });
+    document
+        .getElementById("searchForm")
+        .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the user's input
+            var query = document.getElementById("searchInput").value;
+
+            // Encode the query for use in a URL
+            var encodedQuery = encodeURIComponent(query);
+
+            // Construct the Perplexity URL
+            var perplexityUrl = "https://www.perplexity.ai/?q=" + encodedQuery;
+
+            // Redirect to Perplexity
+            window.location.href = perplexityUrl;
+        });
 </script>
-
-
-
 
 <style>
     .btn {
@@ -59,15 +55,12 @@ const detectedIp = Astro.clientAddress;
 <DefaultLayout>
     <a
         href="https://github.com/AshSimmonds/homey/edit/main/src/pages/index.astro"
-        style="" 
+        style=""
     >
         Updated: {rightMeowTimeDateFriendly} GMT
     </a>
 
-    <a
-        href="https://www.whatismyip.com/ip/{detectedIp}"
-        style="" 
-    >
+    <a href="https://www.whatismyip.com/ip/{detectedIp}" style="">
         IP: {detectedIp}
     </a>
 
@@ -76,21 +69,12 @@ const detectedIp = Astro.clientAddress;
 
         - [ ] make TODO list - [ ] do TODO thingzzz
 
+        <h2 class="align">hmmm</h2>
 
-
-        <h2 class="align">hmmm</a>
-        
-        
         <form id="searchForm">
-          <input type="text" id="searchInput" placeholder="Perplexity">
-          <button type="submit">Interrogate</button>
+            <input type="text" id="searchInput" placeholder="Perplexity" />
+            <button type="submit">Interrogate</button>
         </form>
-
-
-
-
-
-
 
         <h2 class="align">res prodentia</h2>
 
@@ -108,21 +92,32 @@ const detectedIp = Astro.clientAddress;
             Todoist
         </a>
 
-        <a href="https://github.com/AshSimmonds?tab=repositories" class="btn btn-primary"
-            ><span class="material-symbols-outlined">code</span>Repos</a>
+        <a
+            href="https://github.com/AshSimmonds?tab=repositories"
+            class="btn btn-primary"
+            ><span class="material-symbols-outlined">code</span>Repos</a
+        >
 
-        <a href="https://maps.app.goo.gl/p1igMJT1Qwz312qg9" class="btn btn-primary">
+        <a
+            href="https://maps.app.goo.gl/p1igMJT1Qwz312qg9"
+            class="btn btn-primary"
+        >
             MAPPY
         </a>
 
-
         <h2>nusquamu</h2>
 
-        <a href="https://mail.proton.me/u/0/inbox#filter=unread" class="btn btn-primary">
+        <a
+            href="https://mail.proton.me/u/0/inbox#filter=unread"
+            class="btn btn-primary"
+        >
             Mail (Proton)
         </a>
 
-        <a href="https://docs.google.com/spreadsheets/d/1MsqNN8zIKeY0N6FDnuNY26cnel4qyVIs42roXU6B_X4/edit#gid=0" class="btn btn-primary">
+        <a
+            href="https://docs.google.com/spreadsheets/d/1MsqNN8zIKeY0N6FDnuNY26cnel4qyVIs42roXU6B_X4/edit#gid=0"
+            class="btn btn-primary"
+        >
             subscriptions
         </a>
 
@@ -130,12 +125,14 @@ const detectedIp = Astro.clientAddress;
             serprobot
         </a>
 
-        <a href="https://search.google.com/search-console?resource_id=sc-domain%3Aashsimmonds.com" class="btn btn-primary"
-            >Google Search Console</a
+        <a
+            href="https://search.google.com/search-console?resource_id=sc-domain%3Aashsimmonds.com"
+            class="btn btn-primary">Google Search Console</a
         >
 
-        <a href="https://analytics.google.com/analytics/web/" class="btn btn-primary"
-            >Google Anal</a
+        <a
+            href="https://analytics.google.com/analytics/web/"
+            class="btn btn-primary">Google Anal</a
         >
 
         <a href="https://www.google.com/adsense/" class="btn btn-primary"
@@ -146,15 +143,17 @@ const detectedIp = Astro.clientAddress;
             >Google Ads</a
         >
 
-        <a href="https://us.posthog.com" class="btn btn-primary"
-            >PostHog Anal</a
+        <a href="https://us.posthog.com" class="btn btn-primary">PostHog Anal</a
         >
 
         <a href="https://infranodus.com/apps" class="btn btn-primary"
             >InfraNodus</a
         >
 
-        <a href="https://www.reddit.com/user/ashsimmonds/m/nusquamu/new/" class="btn btn-primary">
+        <a
+            href="https://www.reddit.com/user/ashsimmonds/m/nusquamu/new/"
+            class="btn btn-primary"
+        >
             Reddit
         </a>
 
@@ -162,42 +161,50 @@ const detectedIp = Astro.clientAddress;
             Zapier
         </a>
 
-        <a href="https://appsgolem.com/en/cut-youtube-video" class="btn btn-primary">
+        <a
+            href="https://appsgolem.com/en/cut-youtube-video"
+            class="btn btn-primary"
+        >
             YT cut - trim youtube video
         </a>
 
-        <a href="asdf" class="btn btn-primary">
-            asdf
-        </a>
+        <a href="asdf" class="btn btn-primary"> asdf </a>
 
         <hr />
 
         <h2>SEO</h2>
 
-        <a href="https://www.google.com/search?q=seo+site%3Ax.com" class="btn btn-primary">
+        <a
+            href="https://www.google.com/search?q=seo+site%3Ax.com"
+            class="btn btn-primary"
+        >
             SEO Twitter
         </a>
 
-        <a href="https://www.reddit.com/user/ashsimmonds/m/seo/new/" class="btn btn-primary">
+        <a
+            href="https://www.reddit.com/user/ashsimmonds/m/seo/new/"
+            class="btn btn-primary"
+        >
             SEO Reddit
         </a>
 
-        <a href="https://www.google.com/search?q=seo+site%3Achat.openai.com" class="btn btn-primary">
+        <a
+            href="https://www.google.com/search?q=seo+site%3Achat.openai.com"
+            class="btn btn-primary"
+        >
             ChatGPT Customs
         </a>
 
-        <a href="https://app.seochecklist.dev/dashboard" class="btn btn-primary">
+        <a
+            href="https://app.seochecklist.dev/dashboard"
+            class="btn btn-primary"
+        >
             Checklist
         </a>
 
-        <a href="asdf" class="btn btn-primary">
-            asdf
-        </a>
+        <a href="asdf" class="btn btn-primary"> asdf </a>
 
         <hr />
-
-
-
 
         <h2>AIML</h2>
 
@@ -205,40 +212,35 @@ const detectedIp = Astro.clientAddress;
             Perplexity
         </a>
 
-        <a href="https://chat.openai.com/g/g-uOidVyO07-spock" class="btn btn-primary">
+        <a
+            href="https://chat.openai.com/g/g-uOidVyO07-spock"
+            class="btn btn-primary"
+        >
             GPT
         </a>
 
-        <a href="https://groq.com/" class="btn btn-primary">
-            Groq
-        </a>
+        <a href="https://groq.com/" class="btn btn-primary"> Groq </a>
 
-        <a href="https://claude.ai/chats" class="btn btn-primary">
-            Claude
-        </a>
+        <a href="https://claude.ai/chats" class="btn btn-primary"> Claude </a>
 
-
-        <a href="https://bard.google.com/" class="btn btn-primary">
-            Bard
-        </a>
+        <a href="https://bard.google.com/" class="btn btn-primary"> Bard </a>
 
         <a href="https://api.together.xyz/" class="btn btn-primary">
             together.xyz
         </a>
 
-        <a href="https://poe.com/" class="btn btn-primary">
-            Poe
-        </a>
+        <a href="https://poe.com/" class="btn btn-primary"> Poe </a>
 
         <a href="https://copilot.microsoft.com/" class="btn btn-primary">
             MS Copilot
         </a>
 
-        <a href="https://app.leonardo.ai" class="btn btn-primary">
-            Leonardo
-        </a>
+        <a href="https://app.leonardo.ai" class="btn btn-primary"> Leonardo </a>
 
-        <a href="https://ideogram.ai/u/ashsimmonds/generated" class="btn btn-primary">
+        <a
+            href="https://ideogram.ai/u/ashsimmonds/generated"
+            class="btn btn-primary"
+        >
             Ideogram
         </a>
 
@@ -254,16 +256,14 @@ const detectedIp = Astro.clientAddress;
             Big AGI (beam)
         </a>
 
-        <a href="https://geospy.ai" class="btn btn-primary">
-            GeoSpy
-        </a>
-
+        <a href="https://geospy.ai" class="btn btn-primary"> GeoSpy </a>
 
         <hr />
 
-
-
-        <a href="https://flowgpt.com/p/ernest-hemingway" class="btn btn-primary">
+        <a
+            href="https://flowgpt.com/p/ernest-hemingway"
+            class="btn btn-primary"
+        >
             FlowGPT Hemingway
         </a>
 
@@ -275,11 +275,17 @@ const detectedIp = Astro.clientAddress;
             Kaiber
         </a>
 
-        <a href="https://console.cloud.google.com/vertex-ai" class="btn btn-primary">
+        <a
+            href="https://console.cloud.google.com/vertex-ai"
+            class="btn btn-primary"
+        >
             Google Vertex-AI
         </a>
 
-        <a href="https://platform.openai.com/playground" class="btn btn-primary">
+        <a
+            href="https://platform.openai.com/playground"
+            class="btn btn-primary"
+        >
             OpenAI Playground
         </a>
 
@@ -306,9 +312,10 @@ const detectedIp = Astro.clientAddress;
             class="btn btn-primary">Bing</a
         >
 
-        <a href="https://huggingface.co/spaces/facebook/MusicGen" class="btn btn-primary">MusicGen</a>
-
-
+        <a
+            href="https://huggingface.co/spaces/facebook/MusicGen"
+            class="btn btn-primary">MusicGen</a
+        >
 
         <a href="asdf" class="btn btn-primary">asdf</a>
 
@@ -446,39 +453,30 @@ const detectedIp = Astro.clientAddress;
 
         <h2>reddit</h2>
 
-        <a
-            href="https://www.reddit.com/"
-            class="btn btn-primary ">reddit</a
-        >
+        <a href="https://www.reddit.com/" class="btn btn-primary">reddit</a>
 
         <a
             href="https://www.reddit.com/user/ashsimmonds/m/local/new/"
-            class="btn btn-primary ">local</a
+            class="btn btn-primary">local</a
         >
 
         <a
             href="https://www.reddit.com/r/NewZealand/new/"
-            class="btn btn-secondary ">r/NZ</a
+            class="btn btn-secondary">r/NZ</a
         >
 
         <a
             href="https://www.reddit.com/r/Brisbane/new/.compact"
-            class="btn btn-secondary ">r/Brisbane</a
+            class="btn btn-secondary">r/Brisbane</a
         >
 
         <a
             href="https://www.reddit.com/r/Adelaide/new/.compact"
-            class="btn btn-secondary ">r/Adelaide</a
+            class="btn btn-secondary">r/Adelaide</a
         >
 
-        <a
-            href="https://www.reddit.com/r/all/"
-            class="btn btn-primary ">r/all</a
+        <a href="https://www.reddit.com/r/all/" class="btn btn-primary">r/all</a
         >
-
-
-
-
 
         <h2>twitter</h2>
 
@@ -761,9 +759,7 @@ const detectedIp = Astro.clientAddress;
 
         <a href="https://uiverse.io" class="btn btn-primary">UIverse</a>
 
-        <a href="https://x.com/shuding_/status/1552438750470340610"
-            >Fade In</a
-        >
+        <a href="https://x.com/shuding_/status/1552438750470340610">Fade In</a>
 
         <a href="https://tamagui.dev" class="btn btn-primary">TamaGUI</a>
 
