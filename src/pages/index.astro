@@ -22,26 +22,6 @@ const detectedIp = Astro.clientAddress;
     }
 </script>
 
-<script>
-    document
-        .getElementById("searchForm")
-        .addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Get the user's input
-            var query = document.getElementById("searchInput").value;
-
-            // Encode the query for use in a URL
-            var encodedQuery = encodeURIComponent(query);
-
-            // Construct the Perplexity URL
-            var perplexityUrl = "https://www.perplexity.ai/?q=" + encodedQuery;
-
-            // Redirect to Perplexity
-            window.location.href = perplexityUrl;
-        });
-</script>
-
 <style>
     .btn {
         text-decoration: none;
@@ -49,6 +29,72 @@ const detectedIp = Astro.clientAddress;
         min-height: 48px;
         margon: 8px;
         padding: 4px;
+    }
+</style>
+
+<script>
+    const form = document.getElementById("search-form");
+    const input = document.getElementById("search-input");
+    const buttons = document.querySelectorAll(".search-buttons button");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const engine = button.dataset.engine;
+            const query = encodeURIComponent(input.value);
+            let url;
+
+            // switch (engine) {
+            //     case "google":
+            //         url = `https://www.google.com/search?q=${query}`;
+            //         break;
+            //     case "perplexity":
+            //         url = `https://www.perplexity.ai/?q=${query}`;
+            //         break;
+            //     case "reddit":
+            //         url = `https://www.asdf.com/search/?q=${query}`;
+            //         break;
+            //     case "twitter":
+            //         url = `https://twitter.com/search?q=${query}`;
+            //         break;
+            // }
+
+            if (url) {
+                window.open(url, "_blank");
+            }
+        });
+    });
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const query = encodeURIComponent(input.value);
+        window.open(`https://www.google.com/search?q=${query}`, "_blank");
+    });
+</script>
+
+<style>
+    .search-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #search-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .search-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .search-buttons button {
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
     }
 </style>
 
@@ -64,20 +110,28 @@ const detectedIp = Astro.clientAddress;
         <br />
 
         IP:
-        <a href="https://www.whatismyip.com/ip/{detectedIp}" >
+        <a href="https://www.whatismyip.com/ip/{detectedIp}">
             {detectedIp}
         </a>
 
         <br />
 
-        <form id="searchForm" class="w-full">
+        <form id="search-form" class="search-form">
             <input
                 type="text"
-                id="searchInput"
-                placeholder="search..."
-                class="w-3/4 bg-black"
+                id="search-input"
+                name="q"
+                placeholder="Search..."
+                required
             />
-            <button type="submit" class="btn w-1/5">Perplexity</button>
+            <div class="search-buttons">
+                <button type="submit" data-engine="google">Google</button>
+                <button type="button" data-engine="perplexity"
+                    >Perplexity</button
+                >
+                <button type="button" data-engine="reddit">reddit</button>
+                <button type="button" data-engine="twitter">Twitter</button>
+            </div>
         </form>
 
         <hr />
@@ -951,6 +1005,46 @@ const detectedIp = Astro.clientAddress;
         /* Alert the copied text */
         alert("Copied the text: " + copyText.value);
     }
+</script>
+
+<script>
+    const form = document.getElementById("search-form");
+    const input = document.getElementById("search-input");
+    const buttons = document.querySelectorAll(".search-buttons button");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const engine = button.dataset.engine;
+            const query = encodeURIComponent(input.value);
+            let url;
+
+            switch (engine) {
+                case "google":
+                    url = `https://www.google.com/search?q=${query}`;
+                    break;
+                case "perplexity":
+                    url = `https://www.perplexity.ai/?q=${query}`;
+                    break;
+                case "reddit":
+                    url = `https://www.google.com/search?q=${query}+site:reddit.com`;
+                    break;
+                case "twitter":
+                    url = `https://x.com/search?q=${query}&src=typed_query&f=live`;
+                    break;
+            }
+
+            if (url) {
+                window.open(url, "_blank");
+            }
+        });
+    });
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const query = encodeURIComponent(input.value);
+        window.open(`https://www.google.com/search?q=${query}`, "_blank");
+    });
 </script>
 
 yah
